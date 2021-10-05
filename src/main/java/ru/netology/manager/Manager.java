@@ -16,10 +16,10 @@ public class Manager {
         repository.save(tickets);
     }
 
-    public Ticket[] searchAll(String flightFrom, String flightTo) {
+    public Ticket[] searchAll(String from, String to) {
         Ticket[] result = new Ticket[0];
         for (Ticket tickets : repository.getAll()) {
-            if (tickets.getDepartureAirport().equals(flightTo) && tickets.getArrivalAirport().equals(flightTo)) {
+            if (tickets.getDepartureAirport().equals(from) && tickets.getArrivalAirport().equals(to)) {
                 Ticket[] tmp = new Ticket[result.length + 1];
                 System.arraycopy(result, 0, tmp, 0, result.length);
                 tmp[tmp.length - 1] = tickets;

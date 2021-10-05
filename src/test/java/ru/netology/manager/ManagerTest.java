@@ -31,7 +31,7 @@ class ManagerTest {
     @Test
     public void sholdFindAll() {
         Ticket[] actual = manager.searchAll("MOW", "UFA");
-        Ticket[] expected = new Ticket[]{third, sixth};
+        Ticket[] expected = new Ticket[]{sixth, third};
         assertArrayEquals(expected, actual);
     }
 
